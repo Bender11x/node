@@ -1,0 +1,22 @@
+{
+  "name": "estudonode",
+  "version": "1.0.0",
+  "description": "código de estudos de node js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "start": "node dist/tipos.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo Bender Soares",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "chalk": "^5.4.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2"
+  }
+}

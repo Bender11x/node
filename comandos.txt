@@ -1,0 +1,3 @@
+npm install ou npm i - verifica e instala todas as dependências listadas no package.json
+
+instalação global - uso sempre que um pacote precisa ficar disponível em qualquer projeto 
