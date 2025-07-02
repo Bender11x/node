@@ -1,16 +1,17 @@
 let nome: String = "Rodrigo" //tipo string
-let numeto: number = 10 //tipo number
+let numero: number = 10 //tipo number
 let numeroDecimal: number = 100.50
 let booleano: boolean = true
 
+//arrays
 let tipoArray: number[] = [1,2,3]
 let arrayString: String[] = ["A", "B", "C"]
 
 //tuplas - arrays com quantidade e tipos fixos no elemento
-let tupla1 : [String, number] = ["Rodrigo", 18]
+let tupla1:[String, number] = ["Diego", 40]
 
 //enum - conjunto de valores nomeados
-enum Status{
+enum Status {
     Ativo,
     Inativo,
     Pendente
@@ -18,20 +19,21 @@ enum Status{
 
 let s: Status = Status.Ativo
 
-enum Pedido{
+enum Pedido {
     Pendente = 1,
     Recebido = 2,
-    Cancelado = 9,
+    Cancelado = 9
 }
 
 let valor:any = "string" //desativa a verificação de tipo
+valor = 100
 
-let outroValor: unknown = "mensagem" //tipo de segurança que precisa ser validado anres de usar 
+let outroValor: unknown = "mensagem" //tipo de segurança que precisa ser validado antes de usar
 if(typeof outroValor === 'string'){
     console.log(outroValor.toUpperCase());
 }
 
-//tipo void para funções 
+//tipo void para funções
 function log(): void {
     console.log("Olá mundo");
 }
@@ -40,7 +42,7 @@ let arrowFunction = ():void => {
 
 }
 
-//Funções com tipos definidos 
+//funções com tipos definidos
 let soma = (v1:number, v2:number): number => {
     return v1 + v2
 }
@@ -48,30 +50,30 @@ let soma = (v1:number, v2:number): number => {
 soma(10, 10)
 
 //objetos tipados
-let pessoa: { nome: string; idade: number } = {
-  nome: "Rodrigo",
-  idade: 18
-};
+let pessoa: {nome:String; idade:number} = {
+    nome: "Diego",
+    idade: 40
+}
 
-//intersaction types - permite unir tipos diferentes a um mesmo elemento
+//union  types - permite unir tipos diferentes a um mesmo elemento
 function imprimir(valor: number | String){
     console.log(valor);
 }
 
-//intersaction types - permite combinar tipos diferentes
+//intersection types - permite combinar tipos diferentes
 type Individuo = {nome: String}
 type Funcionario = {salario: number}
 
 type Empregado = Individuo & Funcionario
 
 let emp: Empregado = {
-    nome: "Rodrigo",
-    salario : 4000
+    nome: "Diego",
+    salario : 40000
 }
 
-//generic types - permite criar funções, classes ou interfaces genéricas que funcionam com diferentees tipos
+//generic types - permite criar funções, classes ou interfaces genéricas que funcionam com diferentes tipos
 
-function identidade <T>(valor: T): T {
+function identidade<T>(valor: T): T {
     return valor;
 }
 
@@ -79,7 +81,7 @@ let chamandoString = identidade<String>("teste de chamada")
 let chamandoNumerico = identidade<number>(100)
 
 //classes com tipagem
-class Carro{
+class Carro {
     modelo:String
 
     constructor(modelo:String){
@@ -91,6 +93,6 @@ class Carro{
     }
 }
 
-//instanciado o objeto
+//instanciando o objeto
 let fusca = new Carro("fusca")
 fusca.businar()
